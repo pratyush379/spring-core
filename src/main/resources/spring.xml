@@ -8,6 +8,7 @@
 
     <bean id="salaryService" class="org.example.SalaryService">
         <property name="taxService" ref="taxService"/>
+        <property name="minSalary" value="200"/>
     </bean>
 
 </beans>

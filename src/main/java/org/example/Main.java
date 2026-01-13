@@ -13,5 +13,6 @@ public class Main {
                 (SalaryService) context.getBean("salaryService");
 
         System.out.println(service.finalSalary(50000));
+        System.out.println(service.getMinSalary());
     }
 }
