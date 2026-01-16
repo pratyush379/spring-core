@@ -27,5 +27,9 @@ public class Main {
         System.out.println(service.getPfAmount());
         service.printCompanyName();
         System.out.println(service.getCurrencyValue(50000) + " USD ");
+
+        EmployeeDao dao = context.getBean("employeeDao", EmployeeDao.class);
+        dao.saveEmployee(1, "Pratyush");
+        System.out.println("Record inserted");
     }
 }
