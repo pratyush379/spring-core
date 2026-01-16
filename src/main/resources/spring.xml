@@ -6,9 +6,16 @@
 
     <bean id="taxService" class="org.example.TaxService"/>
 
+    <!--interface implementaion class beans-->
+    <bean id="aBC" class="org.example.ABC"/>
+    <bean id="kBC" class="org.example.KBC"/>
+
     <bean id="salaryService" class="org.example.SalaryService">
         <property name="taxService" ref="taxService"/>
         <property name="minSalary" value="200"/>
+        <property name="company" ref="kBC"/><!--can change imp from here-->
     </bean>
+
+
 
 </beans>

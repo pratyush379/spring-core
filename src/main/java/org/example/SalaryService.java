@@ -5,13 +5,13 @@ import org.springframework.stereotype.Component;
 
 @Component//added to show annotation based config
 public class SalaryService {
-
     @Autowired
     private PfContribution pfContribution ;//added to show annotation based config
     private  double PfAmount ;
     private int minSalary ; // xml based injection
     private TaxService taxService; // xml based injection
 
+    private Company company;
 
     public double getPfAmount() {
 
@@ -45,5 +45,21 @@ public class SalaryService {
 
     public double finalSalary(double salary) {
         return salary - taxService.getTax(salary);
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public double getCurrencyValue(double salary){
+        return company.setCurrValue(salary);
+    }
+
+    public  void printCompanyName(){
+        company.name();
     }
 }

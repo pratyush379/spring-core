@@ -25,5 +25,7 @@ public class Main {
         System.out.println(service.getPfContribution());
         service.setPfAmount(service.getMinSalary());
         System.out.println(service.getPfAmount());
+        service.printCompanyName();
+        System.out.println(service.getCurrencyValue(50000) + " USD ");
     }
 }
