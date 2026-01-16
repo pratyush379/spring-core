@@ -28,8 +28,13 @@ public class Main {
         service.printCompanyName();
         System.out.println(service.getCurrencyValue(50000) + " USD ");
 
-        EmployeeDao dao = context.getBean("employeeDao", EmployeeDao.class);
-        dao.saveEmployee(1, "Pratyush");
-        System.out.println("Record inserted");
+        EmployeeDao dao_employee = context.getBean("employeeDao", EmployeeDao.class); // xml based injection
+        dao_employee.saveEmployee(1, "Pratyush");
+        System.out.println("Record inserted in employee table");
+
+
+        ManagerDao dao_manager = context.getBean("managerDao", ManagerDao.class); // java annotation based injection
+        dao_manager.saveManager(2, "Pratyush");
+        System.out.println("Record inserted in manager table");
     }
 }
